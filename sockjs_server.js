@@ -12,6 +12,7 @@ var sjsServer = new vertx.createSockJSServer(server)
 // The handler for the SockJS app - we just echo data back
 sjsServer.installApp({prefix: "/testapp"}, function(sock) {
   sock.dataHandler(function(buff) {
+    console.log(buff)
     sock.writeBuffer(buff)
   })
 });
